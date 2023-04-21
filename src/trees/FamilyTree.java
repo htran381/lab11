@@ -71,7 +71,15 @@ public class FamilyTree
         ArrayList<TreeNode> collectAncestorsToList()
         {
             ArrayList<TreeNode> ancestors = new ArrayList<>();
-
+            TreeNode curr=this;
+            
+            while(curr.parent!=null) {
+            	ancestors.add(curr.parent);
+            	curr=curr.parent;
+            }
+            
+            
+            	
             // ?????  Collect ancestors of this TreeNode into the array list. HINT: going up
             // the nodes of a tree is like traversing a linked list. If that isn’t clear,
             // draw a tree, mark any leaf node, and then mark its ancestors in order from
